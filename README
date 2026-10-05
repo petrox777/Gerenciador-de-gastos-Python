@@ -8,7 +8,7 @@ O projeto foi criado como prática dos fundamentos de Python e evoluiu para incl
 
 A aplicação funciona diretamente pelo terminal e apresenta as opções de cadastro, consulta, filtros e resumo financeiro ao usuário.
 
-img src="print_gerenciador.py.png" alt="Demonstração do Gerenciador de Gastos" width="600">
+![Demonstração do Gerenciador de Gastos](Gerenciador-de-gastos-Python/print_gerenciador.py.png)
 
 ## 🚀 Funcionalidades
 

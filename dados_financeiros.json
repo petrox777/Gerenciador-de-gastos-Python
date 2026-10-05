@@ -1,0 +1,58 @@
+{
+    "gastos": [
+        {
+            "descricao": "calca",
+            "valor": 84.0,
+            "categoria": 7,
+            "data": "465387"
+        },
+        {
+            "descricao": "skin",
+            "valor": 76.0,
+            "categoria": 7,
+            "data": "556334"
+        },
+        {
+            "descricao": "almoco",
+            "valor": 45.0,
+            "categoria": 1,
+            "data": "545377"
+        },
+        {
+            "descricao": "dw",
+            "valor": 84.0,
+            "categoria": 8,
+            "data": "5494"
+        },
+        {
+            "descricao": "al",
+            "valor": 67.0,
+            "categoria": 8,
+            "data": "467787"
+        },
+        {
+            "descricao": "skin",
+            "valor": 76.0,
+            "categoria": 7,
+            "data": "56878"
+        },
+        {
+            "descricao": "jantar",
+            "valor": 130.0,
+            "categoria": 1,
+            "data": "28/11/2026"
+        }
+    ],
+    "valor_total": 692.0,
+    "quantidade_gastos": 8,
+    "itens_cadastrados": [
+        "blusa",
+        "calca",
+        "skin",
+        "almoco",
+        "dw",
+        "al",
+        "skin",
+        "jantar"
+    ]
+}

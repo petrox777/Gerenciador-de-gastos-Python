@@ -1,0 +1,339 @@
+# Projeto Prático: Sistema Inteligente de Análise de Gastos Pessoais
+
+## Contexto
+
+Você foi contratado para desenvolver uma aplicação em Python capaz de auxiliar uma pessoa no controle e na análise de seus gastos pessoais.
+
+O objetivo do projeto é criar um sistema que permita registrar despesas, organizar essas informações e gerar análises que ajudem o usuário a entender seus hábitos financeiros.
+
+Neste primeiro momento, o sistema deverá ser desenvolvido utilizando principalmente os recursos fundamentais da linguagem Python. Posteriormente, o projeto poderá ser expandido com técnicas de análise de dados e Machine Learning.
+
+---
+
+## Objetivo
+
+Desenvolver um programa em Python que permita ao usuário:
+
+* cadastrar gastos;
+* consultar gastos já registrados;
+* organizar despesas por categoria;
+* calcular totais;
+* gerar um resumo financeiro;
+* identificar padrões básicos de consumo.
+
+O programa deverá funcionar por meio de um menu interativo no terminal.
+
+---
+
+## Requisitos funcionais
+
+### 1. Cadastro de gastos
+
+O sistema deverá permitir o cadastro de uma nova despesa.
+
+Para cada gasto, deverão ser armazenadas, no mínimo, as seguintes informações:
+
+* descrição do gasto;
+* valor;
+* categoria;
+* data.
+
+Exemplo:
+
+```text
+Descrição: Almoço
+Valor: 35.90
+Categoria: Alimentação
+Data: 27/09/2026
+```
+
+---
+
+### 2. Categorias
+
+O sistema deverá permitir organizar os gastos em categorias.
+
+Alguns exemplos:
+
+```text
+Alimentação
+Transporte
+Lazer
+Estudos
+Saúde
+Moradia
+Outros
+```
+
+O desenvolvedor poderá permitir que o usuário crie novas categorias ou trabalhar inicialmente com categorias pré-definidas.
+
+---
+
+### 3. Consulta de gastos
+
+O usuário deverá conseguir visualizar os gastos cadastrados.
+
+A aplicação deverá apresentar as informações de forma organizada.
+
+Exemplo:
+
+```text
+--------------------------------------------------
+Data       Descrição           Categoria    Valor
+--------------------------------------------------
+27/09/2026 Almoço              Alimentação  R$ 35,90
+27/09/2026 Uber                Transporte   R$ 18,50
+26/09/2026 Filme               Lazer        R$ 32,00
+--------------------------------------------------
+```
+
+---
+
+### 4. Filtros
+
+O sistema deverá permitir consultar os gastos de acordo com determinados critérios.
+
+Implemente pelo menos dois filtros, como:
+
+* categoria;
+* período;
+* valor mínimo ou máximo.
+
+Exemplo:
+
+```text
+Digite a categoria: Alimentação
+```
+
+O sistema deverá apresentar apenas os gastos pertencentes à categoria informada.
+
+---
+
+### 5. Resumo financeiro
+
+O programa deverá gerar um resumo dos gastos cadastrados.
+
+O resumo deverá apresentar, no mínimo:
+
+* valor total gasto;
+* quantidade de despesas;
+* gasto médio;
+* categoria com maior valor acumulado;
+* maior despesa individual.
+
+Exemplo:
+
+```text
+========== RESUMO FINANCEIRO ==========
+
+Total gasto: R$ 1.245,80
+Quantidade de gastos: 34
+Média por gasto: R$ 36,64
+
+Categoria com maior gasto:
+Alimentação - R$ 520,30
+
+Maior despesa:
+Supermercado - R$ 280,00
+```
+
+---
+
+### 6. Persistência dos dados
+
+Os dados cadastrados não deverão desaparecer quando o programa for encerrado.
+
+Utilize um arquivo para armazenar as informações.
+
+Você poderá escolher entre formatos como:
+
+```text
+JSON
+CSV
+```
+
+O programa deverá carregar os dados automaticamente quando for iniciado.
+
+---
+
+## Requisitos técnicos
+
+O projeto deverá utilizar conceitos fundamentais de Python, incluindo:
+
+* variáveis;
+* tipos de dados;
+* estruturas condicionais;
+* estruturas de repetição;
+* funções;
+* listas e/ou dicionários;
+* manipulação de arquivos;
+* tratamento de erros e exceções;
+* organização do código em módulos, quando necessário.
+
+Evite concentrar toda a aplicação em um único bloco de código.
+
+Crie funções responsáveis por tarefas específicas.
+
+Exemplo:
+
+```text
+adicionar_gasto()
+listar_gastos()
+filtrar_gastos()
+calcular_resumo()
+salvar_dados()
+carregar_dados()
+```
+
+Os nomes e a organização ficam a critério do desenvolvedor.
+
+---
+
+# Desafios extras
+
+Após finalizar os requisitos obrigatórios, implemente funcionalidades adicionais.
+
+### Desafio 1: Orçamento mensal
+
+Permita que o usuário defina um limite mensal de gastos.
+
+Exemplo:
+
+```text
+Orçamento mensal: R$ 2.000,00
+Total gasto:      R$ 1.850,00
+Disponível:       R$ 150,00
+```
+
+Caso o usuário ultrapasse o limite, o sistema deverá apresentar um aviso.
+
+---
+
+### Desafio 2: Ranking de categorias
+
+Mostre as categorias ordenadas da que possui maior gasto para a que possui menor gasto.
+
+Exemplo:
+
+```text
+1. Alimentação  - R$ 620,00
+2. Transporte   - R$ 310,00
+3. Lazer        - R$ 180,00
+4. Estudos      - R$ 95,00
+```
+
+---
+
+### Desafio 3: Análise temporal
+
+Permita comparar os gastos de diferentes meses.
+
+Exemplo:
+
+```text
+Agosto:   R$ 1.450,00
+Setembro: R$ 1.820,00
+
+Variação: +25,52%
+```
+
+---
+
+### Desafio 4: Visualização de dados
+
+Utilize uma biblioteca de Python para criar gráficos que representem os dados financeiros.
+
+Algumas possibilidades:
+
+* gastos por categoria;
+* gastos por mês;
+* evolução dos gastos ao longo do tempo.
+
+Uma biblioteca recomendada para essa etapa é o `Matplotlib`.
+
+---
+
+# Desafio avançado: Machine Learning
+
+Depois de concluir a versão principal do sistema, evolua o projeto para uma aplicação de análise preditiva.
+
+Utilizando dados históricos, desenvolva um modelo capaz de realizar pelo menos uma das tarefas abaixo:
+
+### A. Previsão de gastos
+
+Utilize os gastos anteriores para estimar o valor de uma categoria ou do total de gastos de um período futuro.
+
+### B. Detecção de gastos atípicos
+
+Desenvolva uma solução capaz de identificar despesas que estejam muito fora do padrão habitual do usuário.
+
+### C. Classificação automática
+
+Crie uma funcionalidade capaz de receber a descrição de um gasto e tentar identificar automaticamente sua categoria.
+
+Exemplo:
+
+```text
+Entrada:
+"Comprei um lanche no McDonald's por R$ 28"
+
+Saída:
+Categoria identificada: Alimentação
+```
+
+Nesta etapa, poderão ser utilizadas bibliotecas como `pandas`, `scikit-learn` e outras ferramentas estudadas durante o curso.
+
+---
+
+# Organização sugerida do projeto
+
+Uma possível organização dos arquivos seria:
+
+```text
+projeto_gastos/
+│
+├── main.py
+├── gastos.py
+├── armazenamento.py
+├── analise.py
+├── dados/
+│   └── gastos.json
+└── README.md
+```
+
+A estrutura acima é apenas uma sugestão. O desenvolvedor deverá escolher a organização que considerar mais adequada.
+
+---
+
+# Entrega
+
+Ao finalizar o projeto, disponibilize:
+
+1. Código-fonte completo;
+2. Arquivo `README.md` explicando o projeto;
+3. Instruções para instalação e execução;
+4. Exemplos de utilização;
+5. Tecnologias e bibliotecas utilizadas.
+
+O projeto deverá ser publicado em um repositório do GitHub.
+
+---
+
+# Critérios de avaliação
+
+O projeto será avaliado considerando:
+
+* funcionamento das funcionalidades propostas;
+* organização e legibilidade do código;
+* utilização adequada dos conceitos de Python;
+* tratamento de erros;
+* persistência dos dados;
+* qualidade da documentação;
+* criatividade nas funcionalidades extras;
+* evolução do projeto para análise de dados e/ou Machine Learning.
+
+## Objetivo final
+
+O projeto deverá representar a evolução de uma aplicação simples em Python para uma solução capaz de analisar dados reais e, posteriormente, utilizar técnicas de Machine Learning.
+
+A proposta é que o mesmo projeto possa ser continuamente aprimorado durante os estudos, incorporando novos conhecimentos conforme novos conteúdos forem aprendidos.

@@ -1,339 +1,263 @@
-# Projeto Prático: Sistema Inteligente de Análise de Gastos Pessoais
+# 💰 Gerenciador de Gastos em Python
 
-## Contexto
+Aplicação de terminal desenvolvida em Python para registrar, organizar e analisar gastos pessoais.
 
-Você foi contratado para desenvolver uma aplicação em Python capaz de auxiliar uma pessoa no controle e na análise de seus gastos pessoais.
+O projeto foi criado como prática dos fundamentos de Python e evoluiu para incluir organização por categorias, filtros, resumo financeiro e persistência dos dados em JSON.
 
-O objetivo do projeto é criar um sistema que permita registrar despesas, organizar essas informações e gerar análises que ajudem o usuário a entender seus hábitos financeiros.
+## 📸 Demonstração
 
-Neste primeiro momento, o sistema deverá ser desenvolvido utilizando principalmente os recursos fundamentais da linguagem Python. Posteriormente, o projeto poderá ser expandido com técnicas de análise de dados e Machine Learning.
+A aplicação funciona diretamente pelo terminal e apresenta as opções de cadastro, consulta, filtros e resumo financeiro ao usuário.
 
----
+img src="print_gerenciador.py.png" alt="Demonstração do Gerenciador de Gastos" width="600">
 
-## Objetivo
+## 🚀 Funcionalidades
 
-Desenvolver um programa em Python que permita ao usuário:
+* Cadastro de gastos com descrição, valor, categoria e data;
+* Organização dos gastos por categorias;
+* Consulta dos gastos cadastrados;
+* Filtro dos gastos por categoria;
+* Cálculo do valor total gasto;
+* Cálculo da média por gasto;
+* Identificação da categoria com maior gasto;
+* Identificação da maior despesa individual;
+* Contagem dos gastos cadastrados;
+* Listagem das descrições dos itens;
+* Persistência dos dados em arquivo JSON;
+* Carregamento automático dos dados salvos ao iniciar a aplicação.
 
-* cadastrar gastos;
-* consultar gastos já registrados;
-* organizar despesas por categoria;
-* calcular totais;
-* gerar um resumo financeiro;
-* identificar padrões básicos de consumo.
+## 🛠️ Tecnologias utilizadas
 
-O programa deverá funcionar por meio de um menu interativo no terminal.
+* **Python 3**
+* **JSON**
+* **Git**
+* **GitHub**
 
----
+O projeto utiliza recursos da biblioteca padrão do Python e não depende de bibliotecas externas.
 
-## Requisitos funcionais
+## 📚 Conceitos praticados
 
-### 1. Cadastro de gastos
+* Variáveis e tipos de dados;
+* Listas;
+* Dicionários;
+* Estruturas condicionais;
+* Laços `while` e `for`;
+* Funções;
+* Manipulação de arquivos;
+* Leitura e escrita de JSON;
+* Tratamento de exceções;
+* Estruturas de dados;
+* Compreensão de listas;
+* `lambda`;
+* `max()`, `sum()` e `sorted()`;
+* Organização do código em diferentes responsabilidades.
 
-O sistema deverá permitir o cadastro de uma nova despesa.
+## 💾 Persistência dos dados
 
-Para cada gasto, deverão ser armazenadas, no mínimo, as seguintes informações:
+Os dados financeiros são armazenados no arquivo:
 
-* descrição do gasto;
-* valor;
-* categoria;
-* data.
+```text
+dados_financeiros.json
+```
+
+A aplicação utiliza o módulo `json` do Python para armazenar e recuperar as informações.
+
+### Fluxo da persistência
+
+```text
+dados_financeiros.json
+        ↓
+   json.load()
+        ↓
+Dados carregados em Python
+        ↓
+Cadastro / filtros / análises
+        ↓
+   json.dump()
+        ↓
+dados_financeiros.json
+```
+
+Dessa forma, os gastos cadastrados podem ser recuperados posteriormente em novas execuções do programa.
+
+## 🧠 Como o sistema funciona
+
+Cada gasto é representado por um registro contendo:
+
+```text
+Descrição
+Valor
+Categoria
+Data
+```
+
+As categorias utilizadas no sistema são:
+
+```text
+1. Alimentação
+2. Transporte
+3. Lazer
+4. Estudos
+5. Saúde
+6. Moradia
+7. Outros
+```
+
+Os gastos são armazenados em uma coleção geral e também organizados de acordo com suas categorias, permitindo consultas e análises específicas.
+
+## 📊 Resumo financeiro
+
+O sistema gera um resumo com informações como:
+
+* Total acumulado;
+* Quantidade de gastos;
+* Média por gasto;
+* Categoria com maior valor acumulado;
+* Maior despesa individual;
+* Itens cadastrados.
+
+Essas informações permitem obter uma visão geral dos gastos registrados.
+
+## 🔎 Filtros
+
+A aplicação permite filtrar os gastos de acordo com a categoria escolhida.
 
 Exemplo:
+
+```text
+Categoria: Alimentação
+
+Resultado:
+- Almoço
+- Jantar
+- Outros gastos da categoria
+```
+
+Esse recurso facilita a consulta de gastos específicos sem precisar analisar todos os registros.
+
+## ⚙️ Como executar
+
+É necessário ter o **Python 3** instalado.
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/petrox777/Gerenciador-de-gastos-Python.git
+```
+
+### 2. Acesse a pasta
+
+```bash
+cd Gerenciador-de-gastos-Python
+```
+
+### 3. Execute o programa
+
+```bash
+python contador.py
+```
+
+No Windows, caso o comando `python` não funcione:
+
+```bash
+py contador.py
+```
+
+## 📂 Estrutura do projeto
+
+```text
+Gerenciador-de-gastos-Python/
+├── contador.py
+├── dados_financeiros.json
+└── README
+```
+
+### Arquivos principais
+
+* `contador.py`: código principal da aplicação;
+* `dados_financeiros.json`: arquivo utilizado para persistência dos dados;
+* `README`: documentação do projeto.
+
+## 📈 Evolução do projeto
+
+O projeto começou como um exercício para praticar fundamentos de Python e foi sendo aprimorado com novos conceitos durante o desenvolvimento.
+
+A versão atual reúne:
+
+```text
+Cadastro
+   ↓
+Organização por categorias
+   ↓
+Filtros
+   ↓
+Cálculos financeiros
+   ↓
+Persistência com JSON
+```
+
+O objetivo é continuar evoluindo a aplicação conforme novos conhecimentos forem adquiridos.
+
+## 💡 Principais aprendizados
+
+### Estruturas de dados
+
+Listas e dicionários foram utilizados para representar e organizar os gastos e suas respectivas informações.
+
+### Funções
+
+O código foi dividido em funções para separar responsabilidades e facilitar a manutenção da aplicação.
+
+### Persistência com JSON
+
+O projeto utiliza `json.load()` para carregar os dados armazenados e `json.dump()` para salvar as informações novamente no arquivo.
+
+### Tratamento de entradas
+
+O programa realiza validações para reduzir erros durante o cadastro e a seleção de categorias.
+
+### Manipulação de arquivos
+
+O projeto utiliza `open()` para trabalhar com o arquivo responsável pelo armazenamento dos dados.
+
+## 🧪 Exemplo de utilização
 
 ```text
 Descrição: Almoço
-Valor: 35.90
-Categoria: Alimentação
-Data: 27/09/2026
+Valor: 45.00
+Categoria: 1 - Alimentação
+Data: 04/10/2026
+
+Gasto cadastrado com sucesso.
 ```
 
----
+Após o cadastro, o usuário pode consultar os registros, filtrar os gastos por categoria e visualizar o resumo financeiro.
 
-### 2. Categorias
+## 🔮 Próximos passos
 
-O sistema deverá permitir organizar os gastos em categorias.
+* Melhorar a validação das datas;
+* Criar testes automatizados;
+* Reduzir duplicações no código;
+* Gerar relatórios mensais;
+* Adicionar visualização de dados;
+* Utilizar Pandas para análise dos registros;
+* Explorar Machine Learning para identificar padrões de consumo;
+* Criar previsões de gastos;
+* Evoluir a aplicação para uma interface gráfica ou web.
 
-Alguns exemplos:
+## 📌 Limitações atuais
 
-```text
-Alimentação
-Transporte
-Lazer
-Estudos
-Saúde
-Moradia
-Outros
-```
+* Aplicação executada pelo terminal;
+* Dados armazenados localmente em JSON;
+* Não possui banco de dados;
+* Não possui autenticação de usuários;
+* As categorias são definidas previamente no código.
 
-O desenvolvedor poderá permitir que o usuário crie novas categorias ou trabalhar inicialmente com categorias pré-definidas.
+## 👨‍💻 Autor
 
----
+**petrox777**
 
-### 3. Consulta de gastos
+[GitHub](https://github.com/petrox777)
 
-O usuário deverá conseguir visualizar os gastos cadastrados.
+## 📄 Licença
 
-A aplicação deverá apresentar as informações de forma organizada.
-
-Exemplo:
-
-```text
---------------------------------------------------
-Data       Descrição           Categoria    Valor
---------------------------------------------------
-27/09/2026 Almoço              Alimentação  R$ 35,90
-27/09/2026 Uber                Transporte   R$ 18,50
-26/09/2026 Filme               Lazer        R$ 32,00
---------------------------------------------------
-```
-
----
-
-### 4. Filtros
-
-O sistema deverá permitir consultar os gastos de acordo com determinados critérios.
-
-Implemente pelo menos dois filtros, como:
-
-* categoria;
-* período;
-* valor mínimo ou máximo.
-
-Exemplo:
-
-```text
-Digite a categoria: Alimentação
-```
-
-O sistema deverá apresentar apenas os gastos pertencentes à categoria informada.
-
----
-
-### 5. Resumo financeiro
-
-O programa deverá gerar um resumo dos gastos cadastrados.
-
-O resumo deverá apresentar, no mínimo:
-
-* valor total gasto;
-* quantidade de despesas;
-* gasto médio;
-* categoria com maior valor acumulado;
-* maior despesa individual.
-
-Exemplo:
-
-```text
-========== RESUMO FINANCEIRO ==========
-
-Total gasto: R$ 1.245,80
-Quantidade de gastos: 34
-Média por gasto: R$ 36,64
-
-Categoria com maior gasto:
-Alimentação - R$ 520,30
-
-Maior despesa:
-Supermercado - R$ 280,00
-```
-
----
-
-### 6. Persistência dos dados
-
-Os dados cadastrados não deverão desaparecer quando o programa for encerrado.
-
-Utilize um arquivo para armazenar as informações.
-
-Você poderá escolher entre formatos como:
-
-```text
-JSON
-CSV
-```
-
-O programa deverá carregar os dados automaticamente quando for iniciado.
-
----
-
-## Requisitos técnicos
-
-O projeto deverá utilizar conceitos fundamentais de Python, incluindo:
-
-* variáveis;
-* tipos de dados;
-* estruturas condicionais;
-* estruturas de repetição;
-* funções;
-* listas e/ou dicionários;
-* manipulação de arquivos;
-* tratamento de erros e exceções;
-* organização do código em módulos, quando necessário.
-
-Evite concentrar toda a aplicação em um único bloco de código.
-
-Crie funções responsáveis por tarefas específicas.
-
-Exemplo:
-
-```text
-adicionar_gasto()
-listar_gastos()
-filtrar_gastos()
-calcular_resumo()
-salvar_dados()
-carregar_dados()
-```
-
-Os nomes e a organização ficam a critério do desenvolvedor.
-
----
-
-# Desafios extras
-
-Após finalizar os requisitos obrigatórios, implemente funcionalidades adicionais.
-
-### Desafio 1: Orçamento mensal
-
-Permita que o usuário defina um limite mensal de gastos.
-
-Exemplo:
-
-```text
-Orçamento mensal: R$ 2.000,00
-Total gasto:      R$ 1.850,00
-Disponível:       R$ 150,00
-```
-
-Caso o usuário ultrapasse o limite, o sistema deverá apresentar um aviso.
-
----
-
-### Desafio 2: Ranking de categorias
-
-Mostre as categorias ordenadas da que possui maior gasto para a que possui menor gasto.
-
-Exemplo:
-
-```text
-1. Alimentação  - R$ 620,00
-2. Transporte   - R$ 310,00
-3. Lazer        - R$ 180,00
-4. Estudos      - R$ 95,00
-```
-
----
-
-### Desafio 3: Análise temporal
-
-Permita comparar os gastos de diferentes meses.
-
-Exemplo:
-
-```text
-Agosto:   R$ 1.450,00
-Setembro: R$ 1.820,00
-
-Variação: +25,52%
-```
-
----
-
-### Desafio 4: Visualização de dados
-
-Utilize uma biblioteca de Python para criar gráficos que representem os dados financeiros.
-
-Algumas possibilidades:
-
-* gastos por categoria;
-* gastos por mês;
-* evolução dos gastos ao longo do tempo.
-
-Uma biblioteca recomendada para essa etapa é o `Matplotlib`.
-
----
-
-# Desafio avançado: Machine Learning
-
-Depois de concluir a versão principal do sistema, evolua o projeto para uma aplicação de análise preditiva.
-
-Utilizando dados históricos, desenvolva um modelo capaz de realizar pelo menos uma das tarefas abaixo:
-
-### A. Previsão de gastos
-
-Utilize os gastos anteriores para estimar o valor de uma categoria ou do total de gastos de um período futuro.
-
-### B. Detecção de gastos atípicos
-
-Desenvolva uma solução capaz de identificar despesas que estejam muito fora do padrão habitual do usuário.
-
-### C. Classificação automática
-
-Crie uma funcionalidade capaz de receber a descrição de um gasto e tentar identificar automaticamente sua categoria.
-
-Exemplo:
-
-```text
-Entrada:
-"Comprei um lanche no McDonald's por R$ 28"
-
-Saída:
-Categoria identificada: Alimentação
-```
-
-Nesta etapa, poderão ser utilizadas bibliotecas como `pandas`, `scikit-learn` e outras ferramentas estudadas durante o curso.
-
----
-
-# Organização sugerida do projeto
-
-Uma possível organização dos arquivos seria:
-
-```text
-projeto_gastos/
-│
-├── main.py
-├── gastos.py
-├── armazenamento.py
-├── analise.py
-├── dados/
-│   └── gastos.json
-└── README.md
-```
-
-A estrutura acima é apenas uma sugestão. O desenvolvedor deverá escolher a organização que considerar mais adequada.
-
----
-
-# Entrega
-
-Ao finalizar o projeto, disponibilize:
-
-1. Código-fonte completo;
-2. Arquivo `README.md` explicando o projeto;
-3. Instruções para instalação e execução;
-4. Exemplos de utilização;
-5. Tecnologias e bibliotecas utilizadas.
-
-O projeto deverá ser publicado em um repositório do GitHub.
-
----
-
-# Critérios de avaliação
-
-O projeto será avaliado considerando:
-
-* funcionamento das funcionalidades propostas;
-* organização e legibilidade do código;
-* utilização adequada dos conceitos de Python;
-* tratamento de erros;
-* persistência dos dados;
-* qualidade da documentação;
-* criatividade nas funcionalidades extras;
-* evolução do projeto para análise de dados e/ou Machine Learning.
-
-## Objetivo final
-
-O projeto deverá representar a evolução de uma aplicação simples em Python para uma solução capaz de analisar dados reais e, posteriormente, utilizar técnicas de Machine Learning.
-
-A proposta é que o mesmo projeto possa ser continuamente aprimorado durante os estudos, incorporando novos conhecimentos conforme novos conteúdos forem aprendidos.
+Este projeto ainda não possui uma licença definida.
